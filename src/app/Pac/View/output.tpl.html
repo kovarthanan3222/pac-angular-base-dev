@@ -1,0 +1,32 @@
+<div class="container">
+    <form name="pacinputform" action="#">
+        <div style="width:21%;float:left;margin:20px;">
+            <input type="button" ng-click="savePortfolio();" value="Save"/>
+            <input type="button" ng-click="saveAsPortfolio();" value="Save As"/>
+            <input type="button" ng-click="initializeFormData();" value="Refresh"/>
+            <md-content>
+                <span>Date</span>
+                <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+
+            </md-content>
+            <span>Investment Amount </span>
+            <rzslider rz-slider-model="inputData.investment_amount.value"
+                      rz-slider-options="inputData.investment_amount.options"></rzslider>
+            <span>Annual Distribution</span>
+            <rzslider rz-slider-model="inputData.annual_distribution.value"
+                      rz-slider-options="inputData.annual_distribution.options"></rzslider>
+            <span>Fee Adjustment</span>
+            <rzslider rz-slider-model="inputData.fee_adjustment.value"
+                      rz-slider-options="inputData.fee_adjustment.options"></rzslider>
+
+            <span>Custom period</span>
+            <rzslider rz-slider-model="inputData.custom_period.minValue"
+                      rz-slider-high="inputData.custom_period.maxValue"
+                      rz-slider-options="inputData.custom_period.options"></rzslider>
+            <input type="button" ng-click="compare();" value="Compare"/>
+        </div>
+    </form>
+    <div style="width:75%;float:right">
+        <div id="composition">
+        </div>
+    </div>
